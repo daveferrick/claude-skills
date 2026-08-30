@@ -1,4 +1,5 @@
-# claude-skills
+# Claude Skills
+
 Skills I use with Claude, mostly for content and SEO work.
 
 A skill is a folder with a `SKILL.md` inside it. Claude reads the description, decides when it's relevant, and follows the instructions. Each skill in this repo has its own README with details.
@@ -11,16 +12,26 @@ A skill is a folder with a `SKILL.md` inside it. Claude reads the description, d
 
 ## Installation
 
-**Claude.ai / Claude apps:** download the `.skill` file for the skill you want from [Releases](https://github.com/daveferrick/claude-skills/releases), then upload it in Settings → Capabilities → Skills.
-
 **Claude Code:** clone the repo and copy the folders you want into your skills directory.
 
-```bash
+​```bash
 git clone https://github.com/daveferrick/claude-skills.git
 cp -r claude-skills/non-commodity-content ~/.claude/skills/
-```
+​```
 
-To build a `.skill` file yourself, zip the skill's folder and rename the extension to `.skill`. The folder name must match the `name` field in its `SKILL.md`.
+**Claude.ai / Claude apps:** these need a packaged `.skill` file, which is
+just a zip with the extension changed. Clone the repo (or download it via
+**Code → Download ZIP**), then:
+
+​```bash
+cd claude-skills
+zip -r non-commodity-content.skill non-commodity-content/
+​```
+
+Upload the resulting file in Settings → Capabilities → Skills.
+
+The folder name must match the `name` field in its `SKILL.md`, and the zip
+must contain the folder itself — not just the files inside it.
 
 ## Design notes
 
